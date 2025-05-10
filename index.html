@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centra AI Dashboard</title>
+    <link rel="stylesheet" href="Styles/styles.css" />
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="header">
+        <button id="newChatButton">New Chat</button>
+        <img
+          src="https://images.pexels.com/photos/675920/pexels-photo-675920.jpeg?cs=srgb&dl=pexels-minan1398-675920.jpg&fm=jpg"
+          alt="User Avatar"
+          class="avatar"
+        />
+      </div>
+      <div id="chat-box">
+        <div class="cards">
+          <div class="welcome-content">
+            <div id="welcome-text">
+              <div class="welcome">
+                <h1>How can we help?</h1>
+              </div>
+            </div>
+            <div class="welcome-card" id="welcome-card">
+              <div class="card">
+                Help me to create a personal branding and web page
+              </div>
+              <div class="card">
+                Write a report based on my website data
+              </div>
+              <div class="card">
+                Write a tailored, engaging content with a focus on quality
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="chat-content"></div>
+      </div>
+      <div class="chat">
+        <input id="chat-input" type="text" placeholder="Ask me anything..." />
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+    <script src="Scripts/script.js"></script>
+  </body>
+</html>
