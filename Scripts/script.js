@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function startNewChat() {
     chatInput.value = "";
+    sendButton.disabled = true;
     chatContent.innerHTML = "";
     welcomeText.style.display = "block";
     welcomeCard.style.display = "flex";
@@ -59,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
     welcomeCard.style.display = "none";
     addMessage(message, true);
     chatInput.value = "";
-    chatInput.disabled = true;
     sendButton.disabled = true;
+    chatInput.disabled = true;
 
     addMessage("Typing...", false, true);
 
@@ -72,9 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
     addMessage(aiResponse, false);
 
     chatInput.disabled = false;
-    sendButton.disabled = false;
     chatInput.focus();
   }
+
+  chatInput.addEventListener("input", () => {
+    sendButton.disabled = chatInput.value.trim() === "";
+  });
 
   newChatButton.addEventListener("click", startNewChat);
 
@@ -90,11 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       chatInput.value = card.textContent.trim();
+      sendButton.disabled = false;
       chatInput.focus();
     });
     card.addEventListener("keypress", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         chatInput.value = card.textContent.trim();
+        sendButton.disabled = false;
         chatInput.focus();
       }
     });

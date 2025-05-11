@@ -141,7 +141,7 @@ body {
 }
 
 #chat-box::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 #chat-box::-webkit-scrollbar-track {
@@ -226,6 +226,16 @@ body {
 
 .chat button:hover {
   background-color: #0d8ae0;
+}
+
+.chat button:disabled {
+  background-color: #1da1f2;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.chat button:disabled:hover {
+  background-color: #1da1f2;
 }
 
 @media (max-width: 768px) {
